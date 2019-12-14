@@ -27,6 +27,15 @@ const config = {
           { loader: 'css-loader' },
         ],
       },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
     ],
   },
   plugins: [
