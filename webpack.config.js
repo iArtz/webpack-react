@@ -51,15 +51,28 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.woff$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/font',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'src/template.html',
       favicon: 'src/assets/images/favicon.png',
     }),
   ],
 };
+
 module.exports = config;

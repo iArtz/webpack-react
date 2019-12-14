@@ -9,6 +9,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       js: true,
@@ -20,6 +21,8 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    quotes: ['error', 'single'],
   },
-  ignorePatterns: ["dist/", "node_modules/"],
+  ignorePatterns: ['dist/', 'node_modules/']
 };
