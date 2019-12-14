@@ -4,13 +4,22 @@
     "breadcrumbs.enabled": true,
     "vim.easymotion": true,
     "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["<C-n>"],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
     "eslint.autoFixOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
     "terminal.integrated.rendererType": "dom",
-    "[javascriptreact]": {},
-    "prettier.singleQuote": true,
+    "[javascriptreact]": {
+        "editor.formatOnPaste": true
+    },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "files.associations": {
         "*.js": "javascriptreact"
