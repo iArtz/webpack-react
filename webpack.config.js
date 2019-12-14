@@ -36,6 +36,13 @@ const config = {
           { loader: 'sass-loader' },
         ],
       },
+      {
+        test: /\.png$/,
+        exclude: /(node_modules)/,
+        use: [
+          { loader: 'file-loader' },
+        ],
+      },
     ],
   },
   plugins: [
