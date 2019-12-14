@@ -1,10 +1,12 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 const config = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'assets/js/bundle.js',
     path: resolve(__dirname, 'dist'),
   },
   module: {
@@ -16,6 +18,7 @@ const config = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['react-hot-loader/babel'],
           },
         },
       },
@@ -40,14 +43,22 @@ const config = {
         test: /\.png$/,
         exclude: /(node_modules)/,
         use: [
-          { loader: 'file-loader' },
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/images',
+            },
+          },
         ],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      favicon: 'src/assets/images/favicon.png',
     }),
   ],
 };
