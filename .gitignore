@@ -1,0 +1,14 @@
+# Node Packages
+node_modules/
+
+# Build
+dist/
+
+# Misc
+.DS_Store
+.vscode
+.eslintcache
+yarn.lock
+
+# Logs
+*.log
