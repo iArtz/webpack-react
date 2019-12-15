@@ -1,20 +1,24 @@
 {
   "name": "webpack-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpack + React",
   "main": "index.js",
   "author": "iArtz <iArtz@me.com>",
   "license": "MIT",
   "private": true,
+  "homepage": "https://template.iartz.io",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open"
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist",
+    "code-lint": "eslint . --ext '.js' --cache"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
+    "@types/react": "^15.0.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
@@ -30,6 +34,7 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
     "path": "^0.12.7",
+    "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.18",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
@@ -38,7 +43,15 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iArtz/webpack-react"
   }
 }
